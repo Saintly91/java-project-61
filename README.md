@@ -9,3 +9,5 @@
 [![asciicast](https://asciinema.org/a/N4IPomVK7UWsg9YKUowSXP3bH.svg)](https://asciinema.org/a/N4IPomVK7UWsg9YKUowSXP3bH)
 #### "Calc Game"
 [![asciicast](https://asciinema.org/a/jJSMoggVmyfz84LrF56L7GPbf.svg)](https://asciinema.org/a/jJSMoggVmyfz84LrF56L7GPbf)
+#### "GCD Game"
+[![asciicast](https://asciinema.org/a/gosa55tS5L1c3QZbCIBBC3mmd.svg)](https://asciinema.org/a/gosa55tS5L1c3QZbCIBBC3mmd)
