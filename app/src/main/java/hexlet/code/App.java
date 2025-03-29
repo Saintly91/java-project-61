@@ -2,7 +2,8 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
-import hexlet.code.games.Gcd;
+import hexlet.code.games.GcdGame;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 public class App {
@@ -13,6 +14,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         int number = sc.nextInt();
 
@@ -31,7 +33,11 @@ public class App {
                 break;
             case 4:
                 System.out.println("Your choice: 4");
-                Gcd.gcd();
+                GcdGame.gcd();
+                break;
+            case 5:
+                System.out.println("Your choice: 5");
+                Progression.NumberIsMissing();
                 break;
             default:
                 System.out.println("Your choice: 0");

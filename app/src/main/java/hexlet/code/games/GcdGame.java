@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-public class Gcd {
+public class GcdGame {
     public static void gcd() { // Метод НОД (наибольший общий делитель)
         String[][] data = new String[2][3]; // Создаем массив для хранения вопросов и ответов
         String gameQuestion = "Find the greatest common divisor of given numbers."; // Правила игры
