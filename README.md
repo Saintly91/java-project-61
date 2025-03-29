@@ -13,3 +13,5 @@
 [![asciicast](https://asciinema.org/a/gosa55tS5L1c3QZbCIBBC3mmd.svg)](https://asciinema.org/a/gosa55tS5L1c3QZbCIBBC3mmd)
 #### "Progression Game"
 [![asciicast](https://asciinema.org/a/qevgjQnRZlH0rcO3hwisKKGSn.svg)](https://asciinema.org/a/qevgjQnRZlH0rcO3hwisKKGSn)
+#### "Prime Game"
+[![asciicast](https://asciinema.org/a/UrLXlq8gpqv4JXNqdbiF0Bp4o.svg)](https://asciinema.org/a/UrLXlq8gpqv4JXNqdbiF0Bp4o)
