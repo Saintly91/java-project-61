@@ -6,7 +6,7 @@ public class GcdGame {
     private static final int MAX_NUMBERS = 200;
 
     public static void gcd() { // Метод НОД (наибольший общий делитель)
-        String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив для хранения вопросов и ответов
+        String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив вопросов и ответов
         String gameQuestion = "Find the greatest common divisor of given numbers."; // Правила игры
         String question; // Переменная с вопросом
         int result = 0; // Переменная с результатом

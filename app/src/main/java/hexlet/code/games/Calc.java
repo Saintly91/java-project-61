@@ -6,7 +6,7 @@ public class Calc {
     private static final int MAX_NUMBERS = 20;
 
     public static void calculator() { // Метод калькулятора
-        String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив для хранения вопросов и ответов
+        String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив для вопросов и ответов
         String[] operations = {"+", "-", "*"}; // Доступные операции калькулятора
         String gameQuestion = "What is the result of the expression?"; // Правила игры
         String question; // Переменная с вопросом

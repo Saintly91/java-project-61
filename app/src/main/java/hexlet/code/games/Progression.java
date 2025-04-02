@@ -8,9 +8,10 @@ public class Progression {
     private static final int MAX_POSITION = 20;
     private static final int MAX_HIDE_POSITION = 10;
     private static final int MAX_INCREMENT = 10;
+    private static final int MAX_PROGRESSION_NUMBER = 10;
 
     public static void numberIsMissing() { // Метод поиска недостающего числа
-        String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив для хранения вопросов и ответов
+        String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем вопросов и ответов
         String gameQuestion = "What number is missing in the progression?"; // Правила игры
         String question; // Переменная с вопросом
         String result; // Переменная с результатом
@@ -18,7 +19,7 @@ public class Progression {
             int initPosition = (int) (Math.random() * MAX_POSITION); // Стартовая позиция
             int hidePosition = (int) (Math.random() * MAX_HIDE_POSITION); // Скрытое позиция
             int randomIncrement = (int) (1 + Math.random() * MAX_INCREMENT); // случайный число (шаг прогрессии)
-            String[] progressionNumbers = new String[10]; // создаем массив из 10 чисел
+            String[] progressionNumbers = new String[MAX_PROGRESSION_NUMBER]; // создаем массив из 10 чисел
             progressionNumbers[0] = String.valueOf(initPosition); // Назначаем стартовое число для нашей прогрессии
 
             // Цикл присвоения случайных чисел с учетом шага прогрессии

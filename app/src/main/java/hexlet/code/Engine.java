@@ -27,7 +27,7 @@ public class Engine {
             if (answer.equals(result)) { // Цикл проверки ответа игрока
                 correctAnswerCount++;
                 System.out.println("Correct!");
-                if (correctAnswerCount == 3) {
+                if (correctAnswerCount == MAX_ATTEMPTS) {
                     System.out.println("Congratulations, " + name + "!");
                 }
             } else {
