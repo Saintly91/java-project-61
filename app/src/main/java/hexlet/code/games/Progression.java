@@ -5,15 +5,19 @@ import hexlet.code.Engine;
 import java.util.Arrays;
 
 public class Progression {
+    private static final int MAX_POSITION = 20;
+    private static final int MAX_HIDE_POSITION = 10;
+    private static final int MAX_INCREMENT = 10;
+
     public static void numberIsMissing() { // Метод поиска недостающего числа
-        String[][] data = new String[3][2]; // Создаем массив для хранения вопросов и ответов
+        String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив для хранения вопросов и ответов
         String gameQuestion = "What number is missing in the progression?"; // Правила игры
         String question; // Переменная с вопросом
         String result; // Переменная с результатом
-        for (int i = 0; i < 3; i++) {
-            int initPosition = (int) (Math.random() * 20); // Стартовая позиция
-            int hidePosition = (int) (Math.random() * 10); // Скрытое позиция
-            int randomIncrement = (int) (1 + Math.random() * 10); // случайный число (шаг прогрессии)
+        for (int i = 0; i < Engine.MAX_ATTEMPTS; i++) {
+            int initPosition = (int) (Math.random() * MAX_POSITION); // Стартовая позиция
+            int hidePosition = (int) (Math.random() * MAX_HIDE_POSITION); // Скрытое позиция
+            int randomIncrement = (int) (1 + Math.random() * MAX_INCREMENT); // случайный число (шаг прогрессии)
             String[] progressionNumbers = new String[10]; // создаем массив из 10 чисел
             progressionNumbers[0] = String.valueOf(initPosition); // Назначаем стартовое число для нашей прогрессии
 

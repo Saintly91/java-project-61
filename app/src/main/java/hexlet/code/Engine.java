@@ -3,7 +3,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int MAX_ATTEMPTS = 3; // Количество попыток игры
+    public static final int MAX_ATTEMPTS = 3; // Количество попыток игры
+    public static final int MAX_ROWS = 3;
+    public static final int MAX_COLUMNS = 2;
 
     public static void gameEngine(String[][] inputData, String gameRules) { // Метод движка игры
         Scanner sc = new Scanner(System.in);

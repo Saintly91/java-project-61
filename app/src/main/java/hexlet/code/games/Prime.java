@@ -19,11 +19,11 @@ public class Prime {
 
     }
     public static void primeCheck() { // Метод проверки простого числа
-        String[][] data = new String[3][2]; // Создаем массив для хранения вопросов и ответов
+        String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив для хранения вопросов и ответов
         String gameQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'."; // Правила игры
         String result; // Переменная с результатом
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.MAX_ATTEMPTS; i++) {
             int randomNum = (int) (Math.random() * 100); // Присваиваем случайное число
             // Блоки проверки, является ли число простым
             result = isPrime(randomNum) ? "yes" : "no";
