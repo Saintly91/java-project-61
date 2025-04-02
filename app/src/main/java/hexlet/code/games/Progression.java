@@ -24,6 +24,7 @@ public class Progression {
             result = progressionNumbers[hidePosition]; // Записываем результат скрытого числа
             progressionNumbers[hidePosition] = ".."; // Заменяем скрытое число на ".."
             question = Arrays.toString(progressionNumbers); // Вопрос
+            question = question.replace("[", "").replace("]", "").replace(",", "").trim();
             // присваиваем вопросы и ответы в массив data
             data[i][0] = question;
             data[i][1] = String.valueOf(result);
