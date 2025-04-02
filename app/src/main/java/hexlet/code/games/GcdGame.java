@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 public class GcdGame {
     public static void gcd() { // Метод НОД (наибольший общий делитель)
-        String[][] data = new String[2][3]; // Создаем массив для хранения вопросов и ответов
+        String[][] data = new String[3][2]; // Создаем массив для хранения вопросов и ответов
         String gameQuestion = "Find the greatest common divisor of given numbers."; // Правила игры
         String question; // Переменная с вопросом
         int result = 0; // Переменная с результатом
@@ -19,11 +19,11 @@ public class GcdGame {
                 b = a % b;
                 a = temp;
             }
-        result = a;
+            result = a;
             question = originalA + " " + originalB; // Вопрос
             // присваиваем вопросы и ответы в массив data
-            data[0][i] = question;
-            data[1][i] = String.valueOf(result);
+            data[i][0] = question;
+            data[i][1] = String.valueOf(result);
         }
         Engine.gameEngine(data, gameQuestion); // Вызываем метод "движка" игры
     }

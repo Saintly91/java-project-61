@@ -5,8 +5,8 @@ import hexlet.code.Engine;
 import java.util.Arrays;
 
 public class Progression {
-    public static void NumberIsMissing() { // Метод поиска недостающего числа
-        String[][] data = new String[2][3]; // Создаем массив для хранения вопросов и ответов
+    public static void numberIsMissing() { // Метод поиска недостающего числа
+        String[][] data = new String[3][2]; // Создаем массив для хранения вопросов и ответов
         String gameQuestion = "What number is missing in the progression?"; // Правила игры
         String question; // Переменная с вопросом
         String result; // Переменная с результатом
@@ -17,15 +17,16 @@ public class Progression {
             String[] progressionNumbers = new String[10]; // создаем массив из 10 чисел
             progressionNumbers[0] = String.valueOf(initPosition); // Назначаем стартовое число для нашей прогрессии
 
-            for (int j = 1; j < progressionNumbers.length; j++) { // Цикл присвоения случайных чисел с учетом шага прогрессии
+            // Цикл присвоения случайных чисел с учетом шага прогрессии
+            for (int j = 1; j < progressionNumbers.length; j++) {
                 progressionNumbers[j] = String.valueOf(Integer.parseInt(progressionNumbers[j - 1]) + randomIncrement);
             }
             result = progressionNumbers[hidePosition]; // Записываем результат скрытого числа
             progressionNumbers[hidePosition] = ".."; // Заменяем скрытое число на ".."
             question = Arrays.toString(progressionNumbers); // Вопрос
             // присваиваем вопросы и ответы в массив data
-            data[0][i] = question;
-            data[1][i] = String.valueOf(result);
+            data[i][0] = question;
+            data[i][1] = String.valueOf(result);
         }
         Engine.gameEngine(data, gameQuestion); // Вызываем метод "движка" игры
     }
