@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 
 public class Prime {
     private static final int MAX_NUMBERS = 100;
+    private static final int FIRST_ODD_PRIME = 3;
 
     public static boolean isPrime(int number) { // Метод проверки простого числа
         if (number <= 1) {
@@ -12,7 +13,7 @@ public class Prime {
         if (number % 2 == 0 && number != 2) {
             return false;
         }
-        for (int i = 3; i * i <= number; i += 2) {
+        for (int i = FIRST_ODD_PRIME; i * i <= number; i += 2) {
             if (number % i == 0) {
                 return false;
             }
