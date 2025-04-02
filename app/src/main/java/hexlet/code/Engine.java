@@ -20,7 +20,7 @@ public class Engine {
 
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
-            String answer = sc.nextLine(); // Ввод ответа от пользователя
+            String answer = sc.nextLine().trim(); // Ввод ответа от пользователя
 
             if (answer.equals(result)) { // Цикл проверки ответа игрока
                 correctAnswerCount++;
