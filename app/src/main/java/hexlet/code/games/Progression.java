@@ -18,7 +18,8 @@ public class Progression {
         String result; // Переменная с результатом
         for (int i = 0; i < Engine.MAX_ATTEMPTS; i++) {
             int hidePosition = Engine.getRandomNumbers(1, MAX_HIDE_POSITION); // Скрытое позиция
-            String[] progressionNumbers = Engine.generateProgression(MAX_POSITION, MAX_INCREMENT, MAX_PROGRESSION_NUMBER);
+            String[] progressionNumbers =
+                    Engine.generateProgression(MAX_POSITION, MAX_INCREMENT, MAX_PROGRESSION_NUMBER);
             result = progressionNumbers[hidePosition]; // Записываем результат скрытого числа
             progressionNumbers[hidePosition] = ".."; // Заменяем скрытое число на ".."
             question = Arrays.toString(progressionNumbers); // Вопрос
