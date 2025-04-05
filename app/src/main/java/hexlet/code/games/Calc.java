@@ -4,8 +4,8 @@ import hexlet.code.Engine;
 
 public class Calc {
     private static final int MAX_NUMBERS = 20;
-    private static final String gameQuestion = "What is the result of the expression?"; // Правила игры
-    private static final String[] operations = {"+", "-", "*"}; // Доступные операции калькулятора
+    private static final String GAME_QUESTION = "What is the result of the expression?"; // Правила игры
+    private static final String[] OPERATIONS = {"+", "-", "*"}; // Доступные операции калькулятора
 
     public static void calculator() { // Метод калькулятора
         String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив для вопросов и ответов
@@ -14,7 +14,7 @@ public class Calc {
         for (int i = 0; i < Engine.MAX_ATTEMPTS; i++) { // Цикл присвоения случайных чисел и арифметической операции
             int operand1 = Engine.getRandomNumbers(1, MAX_NUMBERS); // первое случайное число
             int operand2 = Engine.getRandomNumbers(1, MAX_NUMBERS); // второе случайное число
-            String operation = Engine.arithmeticOperation(operations);
+            String operation = Engine.arithmeticOperation(OPERATIONS);
             question = operand1 + " " + operation + " " + operand2; // Вопрос
 
             switch (operation) { // Блок вычисления результата в зависимости от арифметической операции
@@ -35,6 +35,6 @@ public class Calc {
             data[i][0] = question;
             data[i][1] = String.valueOf(result);
         }
-        Engine.gameEngine(data, gameQuestion); // Вызываем метод "движка" игры
+        Engine.gameEngine(data, GAME_QUESTION); // Вызываем метод "движка" игры
     }
 }

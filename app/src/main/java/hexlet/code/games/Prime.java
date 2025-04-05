@@ -4,7 +4,8 @@ import hexlet.code.Engine;
 
 public class Prime {
     private static final int MAX_NUMBERS = 100;
-    private static final String gameQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'."; // Правила игры
+    private static final String GAME_QUESTION =
+            "Answer 'yes' if given number is prime. Otherwise answer 'no'."; // Правила игры
 
     public static void primeCheck() { // Метод проверки простого числа
         String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив вопросов и ответов
@@ -18,6 +19,6 @@ public class Prime {
             data[i][0] = String.valueOf(randomNum);
             data[i][1] = (result);
         }
-        Engine.gameEngine(data, gameQuestion); // Вызываем метод "движка" игры
+        Engine.gameEngine(data, GAME_QUESTION); // Вызываем метод "движка" игры
     }
 }

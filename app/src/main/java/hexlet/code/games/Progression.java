@@ -9,7 +9,8 @@ public class Progression {
     private static final int MAX_HIDE_POSITION = 10;
     private static final int MAX_INCREMENT = 10;
     private static final int MAX_PROGRESSION_NUMBER = 10;
-    private static final String gameQuestion = "What number is missing in the progression?"; // Правила игры
+    private static final String GAME_QUESTION =
+            "What number is missing in the progression?"; // Правила игры
 
     public static void numberIsMissing() { // Метод поиска недостающего числа
         String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем вопросов и ответов
@@ -26,6 +27,6 @@ public class Progression {
             data[i][0] = question;
             data[i][1] = String.valueOf(result);
         }
-        Engine.gameEngine(data, gameQuestion); // Вызываем метод "движка" игры
+        Engine.gameEngine(data, GAME_QUESTION); // Вызываем метод "движка" игры
     }
 }

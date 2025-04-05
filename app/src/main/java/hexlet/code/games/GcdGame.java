@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 public class GcdGame {
     private static final int MAX_NUMBERS = 200;
-    private static final String gameQuestion = "Find the greatest common divisor of given numbers."; // Правила игры
+    private static final String GAME_QUESTION = "Find the greatest common divisor of given numbers."; // Правила игры
 
     public static void gcd() { // Метод НОД (наибольший общий делитель)
         String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив вопросов и ответов
@@ -22,6 +22,6 @@ public class GcdGame {
             data[i][0] = question;
             data[i][1] = String.valueOf(result);
         }
-        Engine.gameEngine(data, gameQuestion); // Вызываем метод "движка" игры
+        Engine.gameEngine(data, GAME_QUESTION); // Вызываем метод "движка" игры
     }
 }
