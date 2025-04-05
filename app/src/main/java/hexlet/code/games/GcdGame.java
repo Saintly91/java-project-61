@@ -4,24 +4,19 @@ import hexlet.code.Engine;
 
 public class GcdGame {
     private static final int MAX_NUMBERS = 200;
+    private static final String gameQuestion = "Find the greatest common divisor of given numbers."; // Правила игры
 
     public static void gcd() { // Метод НОД (наибольший общий делитель)
         String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив вопросов и ответов
-        String gameQuestion = "Find the greatest common divisor of given numbers."; // Правила игры
         String question; // Переменная с вопросом
         int result = 0; // Переменная с результатом
 
         for (int i = 0; i < Engine.MAX_ATTEMPTS; i++) { // Цикл присвоения случайных чисел и выявления НОД
-            int a = (int) (Math.random() * MAX_NUMBERS); // первое случайное число
-            int b = (int) (Math.random() * MAX_NUMBERS); // второе случайное число
+            int a = Engine.getRandomNumbers(1, MAX_NUMBERS); // первое случайное число
+            int b = Engine.getRandomNumbers(1, MAX_NUMBERS); // второе случайное число
             int originalA = a;
             int originalB = b;
-            while (b != 0) { // цикл нахождения НОД
-                int temp = b;
-                b = a % b;
-                a = temp;
-            }
-            result = a;
+            result = Engine.findGCD(a, b);
             question = originalA + " " + originalB; // Вопрос
             // присваиваем вопросы и ответы в массив data
             data[i][0] = question;

@@ -9,23 +9,15 @@ public class Progression {
     private static final int MAX_HIDE_POSITION = 10;
     private static final int MAX_INCREMENT = 10;
     private static final int MAX_PROGRESSION_NUMBER = 10;
+    private static final String gameQuestion = "What number is missing in the progression?"; // Правила игры
 
     public static void numberIsMissing() { // Метод поиска недостающего числа
         String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем вопросов и ответов
-        String gameQuestion = "What number is missing in the progression?"; // Правила игры
         String question; // Переменная с вопросом
         String result; // Переменная с результатом
         for (int i = 0; i < Engine.MAX_ATTEMPTS; i++) {
-            int initPosition = (int) (Math.random() * MAX_POSITION); // Стартовая позиция
-            int hidePosition = (int) (Math.random() * MAX_HIDE_POSITION); // Скрытое позиция
-            int randomIncrement = (int) (1 + Math.random() * MAX_INCREMENT); // случайный число (шаг прогрессии)
-            String[] progressionNumbers = new String[MAX_PROGRESSION_NUMBER]; // создаем массив из 10 чисел
-            progressionNumbers[0] = String.valueOf(initPosition); // Назначаем стартовое число для нашей прогрессии
-
-            // Цикл присвоения случайных чисел с учетом шага прогрессии
-            for (int j = 1; j < progressionNumbers.length; j++) {
-                progressionNumbers[j] = String.valueOf(Integer.parseInt(progressionNumbers[j - 1]) + randomIncrement);
-            }
+            int hidePosition = Engine.getRandomNumbers(1, MAX_HIDE_POSITION); // Скрытое позиция
+            String[] progressionNumbers = Engine.generateProgression(MAX_POSITION, MAX_INCREMENT, MAX_PROGRESSION_NUMBER);
             result = progressionNumbers[hidePosition]; // Записываем результат скрытого числа
             progressionNumbers[hidePosition] = ".."; // Заменяем скрытое число на ".."
             question = Arrays.toString(progressionNumbers); // Вопрос

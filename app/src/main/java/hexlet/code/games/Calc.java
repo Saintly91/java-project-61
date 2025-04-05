@@ -4,17 +4,17 @@ import hexlet.code.Engine;
 
 public class Calc {
     private static final int MAX_NUMBERS = 20;
+    private static final String gameQuestion = "What is the result of the expression?"; // Правила игры
+    private static final String[] operations = {"+", "-", "*"}; // Доступные операции калькулятора
 
     public static void calculator() { // Метод калькулятора
         String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем массив для вопросов и ответов
-        String[] operations = {"+", "-", "*"}; // Доступные операции калькулятора
-        String gameQuestion = "What is the result of the expression?"; // Правила игры
         String question; // Переменная с вопросом
-        int result = 0; // Переменная с результатом
+        int result = 0;
         for (int i = 0; i < Engine.MAX_ATTEMPTS; i++) { // Цикл присвоения случайных чисел и арифметической операции
-            int operand1 = 1 + (int) (Math.random() * MAX_NUMBERS); // первое случайное число
-            int operand2 = 1 + (int) (Math.random() * MAX_NUMBERS); // второе случайное число
-            String operation = operations[(int) (Math.random() * operations.length)]; // случайная арифм. операция
+            int operand1 = Engine.getRandomNumbers(1, MAX_NUMBERS); // первое случайное число
+            int operand2 = Engine.getRandomNumbers(1, MAX_NUMBERS); // второе случайное число
+            String operation = Engine.arithmeticOperation(operations);
             question = operand1 + " " + operation + " " + operand2; // Вопрос
 
             switch (operation) { // Блок вычисления результата в зависимости от арифметической операции
@@ -30,6 +30,7 @@ public class Calc {
                 default:
                     break;
             }
+
             // присваиваем вопросы и ответы в массив data
             data[i][0] = question;
             data[i][1] = String.valueOf(result);
