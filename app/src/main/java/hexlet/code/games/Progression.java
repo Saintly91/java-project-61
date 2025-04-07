@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
+import hexlet.code.Utils;
 import java.util.Arrays;
 
 public class Progression {
@@ -12,14 +12,24 @@ public class Progression {
     private static final String GAME_QUESTION =
             "What number is missing in the progression?"; // Правила игры
 
+    public static String[] generateProgression(int initPosition, int randomIncrement, int maxLength) {
+        String[] progression = new String[maxLength]; // создаем массив из 10 чисел
+        for (int i = 0; i < maxLength; i++) {
+            progression[i] = String.valueOf(initPosition + i * randomIncrement); // Заполняем числа
+        }
+        return progression;
+    }
+
     public static void numberIsMissing() { // Метод поиска недостающего числа
         String[][] data = new String[Engine.MAX_ROWS][Engine.MAX_COLUMNS]; // Создаем вопросов и ответов
         String question; // Переменная с вопросом
         String result; // Переменная с результатом
         for (int i = 0; i < Engine.MAX_ATTEMPTS; i++) {
-            int hidePosition = Engine.getRandomNumbers(1, MAX_HIDE_POSITION); // Скрытое позиция
+            int initPosition = Utils.getRandomNumbers(1, MAX_POSITION);
+            int randomIncrement = Utils.getRandomNumbers(1, MAX_INCREMENT);
+            int hidePosition = Utils.getRandomNumbers(1, MAX_HIDE_POSITION); // Скрытое позиция
             String[] progressionNumbers =
-                    Engine.generateProgression(MAX_POSITION, MAX_INCREMENT, MAX_PROGRESSION_NUMBER);
+                    generateProgression(initPosition, randomIncrement, MAX_PROGRESSION_NUMBER);
             result = progressionNumbers[hidePosition]; // Записываем результат скрытого числа
             progressionNumbers[hidePosition] = ".."; // Заменяем скрытое число на ".."
             question = Arrays.toString(progressionNumbers); // Вопрос

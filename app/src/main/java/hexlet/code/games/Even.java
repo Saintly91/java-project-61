@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Even {
     private static final int MAX_NUMBERS = 100;
@@ -11,7 +12,7 @@ public class Even {
         String result; // Переменная с результатом
 
         for (int i = 0; i < Engine.MAX_ATTEMPTS; i++) { // Цикл присвоения случайных чисел и арифметической операции
-            int randomNum = Engine.getRandomNumbers(1, MAX_NUMBERS);
+            int randomNum = Utils.getRandomNumbers(1, MAX_NUMBERS);
             result = (randomNum % 2 == 0) ? "yes" : "no";
             // присваиваем вопросы и ответы в массив data
             data[i][0] = String.valueOf(randomNum);
